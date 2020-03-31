@@ -95,6 +95,7 @@ func (i *Input) Prompt(config *PromptConfig) (interface{}, error) {
 }
 
 func (i *Input) Cleanup(config *PromptConfig, val interface{}) error {
+	i.lineCount++
 	return i.Render(
 		InputQuestionTemplate,
 		InputTemplateData{
